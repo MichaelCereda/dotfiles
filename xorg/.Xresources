@@ -1,0 +1,91 @@
+!-------------------------------------------------------------------------------
+! Xft settings
+!-------------------------------------------------------------------------------
+
+Xft.dpi:                    96
+Xft.antialias:              true
+Xft.rgba:                   rgb
+Xft.hinting:                true
+Xft.hintstyle:              hintslight
+
+!-------------------------------------------------------------------------------
+! URxvt settings
+! Colours lifted from Solarized (http://ethanschoonover.com/solarized)
+! More info at:
+! http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.1.pod
+!-------------------------------------------------------------------------------
+
+URxvt.depth:                32
+URxvt.geometry:             90x30
+URxvt.transparent:          false
+URxvt.fading:               0
+! URxvt.urgentOnBell:         true
+! URxvt.visualBell:           true
+URxvt.loginShell:           true
+URxvt.saveLines:            1500
+URxvt.internalBorder:       3
+URxvt.lineSpace:            0
+
+! Fonts
+URxvt.allow_bold:           true
+/* URxvt.font:                 -*-terminus-medium-r-normal-*-12-120-72-72-c-60-iso8859-1 */
+URxvt*font: xft:MesloLGM Nerd Font:pixelsize=12
+URxvt*boldFont: xft:MesloLGM Nerd Font:pixelsize=12
+
+! Fix font space
+URxvt*letterSpace: -1
+
+! Scrollbar
+URxvt.scrollStyle:          rxvt
+URxvt.scrollBar:            false
+
+! Perl extensions
+URxvt.perl-ext-common:      default,matcher
+URxvt.matcher.button:       1
+URxvt.urlLauncher:          firefox
+
+! Cursor
+URxvt.cursorBlink:          true
+URxvt.cursorColor:          #657b83
+URxvt.cursorUnderline:      false
+
+! Pointer
+URxvt.pointerBlank:         true
+
+! special
+*.foreground:   #c1c1c1
+*.background:   #080808
+*.cursorColor:  #c1c1c1
+
+! black
+*.color0:       #1b1d1e
+*.color8:       #505354
+
+! red
+*.color1:       #f92672
+*.color9:       #ff5995
+
+! green
+*.color2:       #82b414
+*.color10:      #b6e354
+
+! yellow
+*.color3:       #fd971f
+*.color11:      #feed6c
+
+! blue
+*.color4:       #4e82aa
+*.color12:      #0c73c2
+
+! magenta
+*.color5:       #8c54fe
+*.color13:      #9e6ffe
+
+! cyan
+*.color6:       #465457
+*.color14:      #899ca1
+
+! white
+*.color7:       #ccccc6
+*.color15:      #f8f8f2
+
