@@ -1,0 +1,11 @@
+antigen use oh-my-zsh
+
+antigen bundle git
+antigen bundle pip
+antigen bundle node
+antigen bundle nvm
+antigen bundle npm
+
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-history-substring-search ./zsh-history-substring-search.zsh
+antigen apply
