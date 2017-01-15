@@ -29,8 +29,8 @@ URxvt.lineSpace:            0
 ! Fonts
 URxvt.allow_bold:           true
 /* URxvt.font:                 -*-terminus-medium-r-normal-*-12-120-72-72-c-60-iso8859-1 */
-URxvt*font: xft:MesloLGM Nerd Font:pixelsize=12
-URxvt*boldFont: xft:MesloLGM Nerd Font:pixelsize=12
+URxvt*font: xft:MesloLGM Nerd Font:pixelsize=11
+URxvt*boldFont: xft:MesloLGM Nerd Font:pixelsize=11
 
 ! Fix font space
 URxvt*letterSpace: -1
