@@ -1,4 +1,4 @@
-source antigen.zsh
+source ~/antigen.zsh
 antigen init .antigenrc
 
 alias pbcopy='xsel --clipboard --input'
