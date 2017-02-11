@@ -23,6 +23,8 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'valloric/youcompleteme'
+Plugin 'tpope/vim-sleuth'
+Plugin 'joonty/vdebug'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -43,5 +45,9 @@ let g:airline#extensions#tabline#enabled = 1
 
 syntax on
 set number
+
+set showbreak=↪\ 
+set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
+set list
 
 nmap <F8> :TagbarToggle<CR>
