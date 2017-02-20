@@ -22,10 +22,10 @@ Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'valloric/youcompleteme'
+Plugin 'shougo/neocomplete.vim'
 Plugin 'tpope/vim-sleuth'
-Plugin 'joonty/vdebug'
 
+Plugin 'https://github.com/tyrannicaltoucan/vim-quantum.git'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -42,6 +42,15 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 let g:airline#extensions#tabline#enabled = 1
+set background=dark
+let g:quantum_black = 1
+let g:airline_theme='quantum'
+colorscheme quantum
+
+if has("termguicolors")
+    set termguicolors
+endif
+
 
 syntax on
 set number
