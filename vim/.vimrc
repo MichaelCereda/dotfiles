@@ -1,3 +1,6 @@
+scriptencoding utf-8
+set encoding=utf-8
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -16,6 +19,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
@@ -24,7 +28,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'shougo/neocomplete.vim'
 Plugin 'tpope/vim-sleuth'
-
+Plugin 'junegunn/fzf'
 Plugin 'https://github.com/tyrannicaltoucan/vim-quantum.git'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -54,9 +58,14 @@ endif
 
 syntax on
 set number
+    
+set list
+"let &showbreak="\u21aa\u2022"
+"let &listchars="tab:\u2192\ ,eol:\u21b2,nbsp:\u2423,trail:\u2022,extends:\u232a,precedes:\u2329"
 
 set showbreak=↪\ 
 set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
-set list
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
 
 nmap <F8> :TagbarToggle<CR>
