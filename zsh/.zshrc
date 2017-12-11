@@ -12,4 +12,6 @@ antigen init .antigenrc
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
 
+
+~/z/z.sh
 screenfetch
