@@ -30,6 +30,8 @@ Plugin 'shougo/neocomplete.vim'
 Plugin 'tpope/vim-sleuth'
 Plugin 'junegunn/fzf'
 Plugin 'https://github.com/tyrannicaltoucan/vim-quantum.git'
+Plugin 'lilydjwg/colorizer'
+Plugin 'morhetz/gruvbox'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -47,21 +49,14 @@ filetype plugin indent on    " required
 
 let g:airline#extensions#tabline#enabled = 1
 set background=dark
-let g:quantum_black = 1
-let g:airline_theme='quantum'
-colorscheme quantum
-
-if has("termguicolors")
-    set termguicolors
-endif
-
+let g:airline_theme='gruvbox'
+colorscheme gruvbox
 
 syntax on
 set number
-    
 set list
-"let &showbreak="\u21aa\u2022"
-"let &listchars="tab:\u2192\ ,eol:\u21b2,nbsp:\u2423,trail:\u2022,extends:\u232a,precedes:\u2329"
+let &showbreak="\u21aa\u2022"
+let &listchars="tab:\u2192\ ,eol:\u21b2,nbsp:\u2423,trail:\u2022,extends:\u232a,precedes:\u2329"
 
 set showbreak=↪\ 
 set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨

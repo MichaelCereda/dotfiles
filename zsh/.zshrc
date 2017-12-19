@@ -13,5 +13,5 @@ alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
 
 
-~/z/z.sh
+~/dotfiles/scripts/z/z.sh
 screenfetch
