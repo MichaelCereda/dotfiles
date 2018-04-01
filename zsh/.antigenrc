@@ -10,4 +10,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search ./zsh-history-substring-search.zsh
 antigen bundle zsh-users/zsh-completions
 antigen bundle robbyrussell/oh-my-zsh plugins/pass
+
+antigen theme theunraveler
 antigen apply
+
