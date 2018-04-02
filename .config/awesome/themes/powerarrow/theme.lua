@@ -24,8 +24,8 @@ theme.bg_normal                                 = "#222222"
 theme.bg_focus                                  = "#1E2320"
 theme.bg_urgent                                 = "#3F3F3F"
 theme.taglist_fg_focus                          = "#00CCFF"
-theme.tasklist_bg_focus                         = "#171717"
-theme.tasklist_fg_focus                         = "#00CCFF"
+theme.tasklist_bg_focus                         = "#00474f"-- "#171717"
+theme.tasklist_fg_focus                         = "#faf1b8"--"#00CCFF"
 theme.border_width                              = 1
 theme.border_normal                             = "#3F3F3F"
 theme.border_focus                              = "#6F6F6F"
@@ -74,8 +74,9 @@ theme.widget_mail                               = theme.dir .. "/icons/mail.png"
 theme.widget_mail_on                            = theme.dir .. "/icons/mail_on.png"
 theme.widget_task                               = theme.dir .. "/icons/task.png"
 theme.widget_scissors                           = theme.dir .. "/icons/scissors.png"
-theme.tasklist_plain_task_name                  = true
+theme.tasklist_plain_task_name                  = false
 theme.tasklist_disable_icon                     = true
+theme.tasklist_align                            = "center"
 theme.useless_gap                               = 0
 theme.titlebar_close_button_focus               = theme.dir .. "/icons/titlebar/close_focus.png"
 theme.titlebar_close_button_normal              = theme.dir .. "/icons/titlebar/close_normal.png"
@@ -95,6 +96,12 @@ theme.titlebar_maximized_button_focus_active    = theme.dir .. "/icons/titlebar/
 theme.titlebar_maximized_button_normal_active   = theme.dir .. "/icons/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_inactive  = theme.dir .. "/icons/titlebar/maximized_focus_inactive.png"
 theme.titlebar_maximized_button_normal_inactive = theme.dir .. "/icons/titlebar/maximized_normal_inactive.png"
+
+theme.tasklist_spacing = 0
+theme.tasklist_shape_border_width = 0
+theme.tasklist_shape = function (cr, width, height)
+  gears.shape.parallelogram(cr, width, height, width-10)
+end
 
 local markup = lain.util.markup
 local separators = lain.util.separators
@@ -282,6 +289,46 @@ local net = lain.widget.net({
 -- Separators
 local arrow = separators.arrow_left
 
+function diagonal_box(col1, col2)
+    local widget = wibox.widget.base.make_widget()
+
+    widget.fit = function(m, w, h)
+        return separators.width, separators.height
+    end
+
+    widget.draw = function(mycross, wibox, cr, width, height)
+        if col1 ~= "alpha" then
+            cr:set_source_rgb(gears.color.parse_color(col1))
+            -- cr:new_path()
+            -- cr:move_to(width, 0)
+            -- cr:line_to(0, height)
+            -- cr:line_to(0, 0)
+            -- cr:close_path()
+            -- cr:fill()
+
+            cr:new_path()
+            cr:move_to(width, 0)
+            cr:line_to(0, height)
+            cr:line_to(0, 0)
+            cr:close_path()
+            cr:fill()
+        end
+
+        if col2 ~= "alpha" then
+            cr:new_path()
+            cr:move_to(width, 0)
+            cr:line_to(0, height)
+            cr:line_to(width, height)
+            cr:close_path()
+        
+            cr:set_source_rgb(gears.color.parse_color(col2))
+            cr:fill()
+        end
+   end
+
+   return widget
+end
+
 function theme.powerline_rl(cr, width, height)
     local arrow_depth, offset = height/2, 0
 
@@ -332,9 +379,13 @@ function theme.at_screen_connect(s)
     -- Create a taglist widget
     s.mytaglist = awful.widget.taglist(s, awful.widget.taglist.filter.all, awful.util.taglist_buttons)
 
-    -- Create a tasklist widget
-    s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, awful.util.tasklist_buttons)
-
+    
+    s.mytasklist = awful.widget.tasklist(
+      s, 
+      awful.widget.tasklist.filter.currenttags, 
+      awful.util.tasklist_buttons
+    )
+    
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s, height = 16, bg = theme.bg_normal, fg = theme.fg_normal })
 
@@ -366,27 +417,27 @@ function theme.at_screen_connect(s)
             pl(binclock.widget, "#777E76"),
             --]]
             -- using separators
-            arrow(theme.bg_normal, "#343434"),
+            diagonal_box(theme.bg_normal, "#343434"),
             wibox.container.background(wibox.container.margin(wibox.widget { mailicon, mail and mail.widget, layout = wibox.layout.align.horizontal }, 4, 7), "#343434"),
-            arrow("#343434", theme.bg_normal),
+            diagonal_box("#343434", theme.bg_normal),
             wibox.container.background(wibox.container.margin(wibox.widget { mpdicon, theme.mpd.widget, layout = wibox.layout.align.horizontal }, 3, 6), theme.bg_focus),
-            arrow(theme.bg_normal, "#343434"),
+            diagonal_box(theme.bg_normal, "#343434"),
             wibox.container.background(wibox.container.margin(task, 3, 7), "#343434"),
-            arrow("#343434", "#777E76"),
+            diagonal_box("#343434", "#777E76"),
             wibox.container.background(wibox.container.margin(wibox.widget { memicon, mem.widget, layout = wibox.layout.align.horizontal }, 2, 3), "#777E76"),
-            arrow("#777E76", "#4B696D"),
+            diagonal_box("#777E76", "#4B696D"),
             wibox.container.background(wibox.container.margin(wibox.widget { cpuicon, cpu.widget, layout = wibox.layout.align.horizontal }, 3, 4), "#4B696D"),
-            arrow("#4B696D", "#4B3B51"),
+            diagonal_box("#4B696D", "#4B3B51"),
             wibox.container.background(wibox.container.margin(wibox.widget { tempicon, tempwidget, layout = wibox.layout.align.horizontal }, 4, 4), "#4B3B51"),
-            arrow("#4B3B51", "#CB755B"),
+            diagonal_box("#4B3B51", "#CB755B"),
             wibox.container.background(wibox.container.margin(wibox.widget { fsicon, theme.fs.widget, layout = wibox.layout.align.horizontal }, 3, 3), "#CB755B"),
-            arrow("#CB755B", "#8DAA9A"),
+            diagonal_box("#CB755B", "#8DAA9A"),
             wibox.container.background(wibox.container.margin(wibox.widget { baticon, bat.widget, layout = wibox.layout.align.horizontal }, 3, 3), "#8DAA9A"),
-            arrow("#8DAA9A", "#C0C0A2"),
+            diagonal_box("#8DAA9A", "#C0C0A2"),
             wibox.container.background(wibox.container.margin(wibox.widget { nil, neticon, net.widget, layout = wibox.layout.align.horizontal }, 3, 3), "#C0C0A2"),
-            arrow("#C0C0A2", "#777E76"),
+            diagonal_box("#C0C0A2", "#777E76"),
             wibox.container.background(wibox.container.margin(binclock.widget, 4, 8), "#777E76"),
-            arrow("#777E76", "alpha"),
+            diagonal_box("#777E76", "alpha"),
             --]]
             s.mylayoutbox,
         },
