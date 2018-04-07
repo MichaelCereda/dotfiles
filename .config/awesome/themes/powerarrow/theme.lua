@@ -228,7 +228,6 @@ end)
 local tempwidget = awful.widget.watch({awful.util.shell, '-c', 'sensors |grep temp1 | awk \'{print $2}\' | cut -c 2-'}, 15,
 function(widget, stdout)
     local temps = stdout
-    print(stdout)
     -- for line in stdout:gmatch("[^\r\n]+") do
     --     temps = temps .. line:match("+(%d+).*°C")  .. "° " -- in Celsius
     -- end
