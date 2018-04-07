@@ -1,0 +1,7 @@
+.config/**/*
+.local/**/*
+!.config/neofetch
+!.config/awesome
+!.config/pikaur.conf
+!.local/share/fonts
+!.gnupg/gpg-agent.conf
