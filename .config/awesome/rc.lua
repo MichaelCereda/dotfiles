@@ -456,8 +456,12 @@ globalkeys = gears.table.join(
     awful.key({ altkey, "Control" }, "+", function () lain.util.useless_gaps_resize(1) end,
               {description = "increment useless gaps", group = "tag"}),
     awful.key({ altkey, "Control" }, "-", function () lain.util.useless_gaps_resize(-1) end,
-              {description = "decrement useless gaps", group = "tag"})
-
+              {description = "decrement useless gaps", group = "tag"}),
+    -- Brightness
+    awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 5") end,
+               {description = "decrement screen brightness", group = "hotkeys"}),
+    
+    awful.key({ }, "XF86MonBrightnessUp", function () awful.util.spawn("xbacklight -inc 5") end)
 )
 
 clientkeys = gears.table.join(
