@@ -134,8 +134,8 @@ lain.widget.contrib.task.attach(task, {
 task:buttons(my_table.join(awful.button({}, 1, lain.widget.contrib.task.prompt)))
 
 -- Scissors (xsel copy and paste)
-local scissors = wibox.widget.imagebox(theme.widget_scissors)
-scissors:buttons(my_table.join(awful.button({}, 1, function() awful.spawn("xsel | xsel -i -b") end)))
+-- local scissors = wibox.widget.imagebox(theme.widget_scissors)
+-- scissors:buttons(my_table.join(awful.button({}, 1, function() awful.spawn("xsel | xsel -i -b") end)))
 
 -- Mail IMAP check
 local mailicon = wibox.widget.imagebox(theme.widget_mail)
@@ -228,9 +228,6 @@ end)
 local tempwidget = awful.widget.watch({awful.util.shell, '-c', 'sensors |grep temp1 | awk \'{print $2}\' | cut -c 2-'}, 15,
 function(widget, stdout)
     local temps = stdout
-    -- for line in stdout:gmatch("[^\r\n]+") do
-    --     temps = temps .. line:match("+(%d+).*°C")  .. "° " -- in Celsius
-    -- end
     widget:set_markup(markup.font(theme.font, " " .. temps))
 end)
 
@@ -298,12 +295,6 @@ function diagonal_box(col1, col2)
     widget.draw = function(mycross, wibox, cr, width, height)
         if col1 ~= "alpha" then
             cr:set_source_rgb(gears.color.parse_color(col1))
-            -- cr:new_path()
-            -- cr:move_to(width, 0)
-            -- cr:line_to(0, height)
-            -- cr:line_to(0, 0)
-            -- cr:close_path()
-            -- cr:fill()
 
             cr:new_path()
             cr:move_to(width, 0)
@@ -402,7 +393,7 @@ function theme.at_screen_connect(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             wibox.widget.systray(),
-            wibox.container.margin(scissors, 4, 8),
+            -- wibox.container.margin(scissors, 4, 8),
             --[[ using shapes
             pl(wibox.widget { mpdicon, theme.mpd.widget, layout = wibox.layout.align.horizontal }, "#343434"),
             pl(task, "#343434"),
