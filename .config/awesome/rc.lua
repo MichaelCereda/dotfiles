@@ -46,13 +46,14 @@ end
 -- {{{ Variable definitions
 
 local themes = {
-    "dark",             -- 1
-    "powerarrow"      -- 2
+    "dark",           -- 1
+    "powerarrow",      -- 2
+    "minimal"         -- 3
 }
 
 -- This is used later as the default terminal and editor to run.
 local modkey = "Mod4"
-local altkey       = "Mod1"
+local altkey = "Mod1"
 terminal = "xterm"
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
@@ -163,7 +164,7 @@ local function client_menu_toggle_fn()
 end
 -- }}}
 
-local chosen_theme = themes[2]
+local chosen_theme = themes[3]
 local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), chosen_theme)
 -- Themes define colours, icons, font and wallpapers.
 -- beautiful.init(gears.filesystem.get_themes_dir() .. "/themes/default/theme.lua")

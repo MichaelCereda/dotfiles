@@ -2,11 +2,12 @@
 ! Xft settings
 !-------------------------------------------------------------------------------
 
-Xft.dpi:                    96
+Xft.dpi:                    180
 Xft.antialias:              true
 Xft.rgba:                   rgb
 Xft.hinting:                true
-Xft.hintstyle:              hintslight
+Xft.hintstyle:              hintfull
+Xft.lcdfilter:		    lcddefault
 
 !-------------------------------------------------------------------------------
 ! URxvt settings
@@ -30,10 +31,10 @@ URxvt.lineSpace:            0
 ! Fonts
 URxvt.allow_bold:           true
 /* URxvt.font:                 -*-terminus-medium-r-normal-*-12-120-72-72-c-60-iso8859-1 */
-URxvt*font: xft:Fantasque Sans Mono:pixelsize=14
-URxvt*boldFont: xft:Fantasque Sans Mono:style=Bold:pixelsize=14
-URxvt.italicFont: xft:Fantasque Sans Mono:pixelsize=14:style=Italic
-URxvt.boldItalicFont: xft:Fantasque Sans Mono:pixelsize=14:style=Bold Italic
+URxvt*font: xft:MesloLGM Nerd Font:style=RegularForPowerline:pixelsize=32
+URxvt*boldFont: xft:Fantasque Sans Mono:style=Bold:pixelsize=32
+URxvt.italicFont: xft:Fantasque Sans Mono:pixelsize=32:style=Italic
+URxvt.boldItalicFont: xft:Fantasque Sans Mono:pixelsize=32:style=Bold Italic
 
 ! Fix font space
 URxvt*letterSpace: -1
@@ -49,51 +50,49 @@ URxvt.urlLauncher:          firefox
 
 ! Cursor
 URxvt.cursorBlink:          true
-URxvt.cursorColor:          #657b83
+URxvt.cursorColor:          #f48c42
 URxvt.cursorUnderline:      true
 
 ! Pointer
 URxvt.pointerBlank:         true
 
-URxvt.iso14755: true
-URxvt.iso14755_52: false
 
-! special
-*.foreground:   #c1c1c1
-*.background:   #080808
-*.cursorColor:  #c1c1c1
+! -----------------------------------------------------------------------------
+! File: gruvbox-dark.xresources
+! Description: Retro groove colorscheme generalized
+! Author: morhetz <morhetz@gmail.com>
+! Source: https://github.com/morhetz/gruvbox-generalized
+! Last Modified: 6 Sep 2014
+! -----------------------------------------------------------------------------
 
-! black
-*.color0:       #1b1d1e
-*.color8:       #505354
-
-! red
-*.color1:       #f92672
-*.color9:       #ff5995
-
-! green
-*.color2:       #82b414
-*.color10:      #b6e354
-
-! yellow
-*.color3:       #fd971f
-*.color11:      #feed6c
-
-! blue
-*.color4:       #4e82aa
-*.color12:      #0c73c2
-
-! magenta
-*.color5:       #8c54fe
-*.color13:      #9e6ffe
-
-! cyan
-*.color6:       #465457
-*.color14:      #899ca1
-
-! white
-*.color7:       #ccccc6
-*.color15:      #f8f8f2
+! hard contrast: *background: #1d2021
+*background: #282828
+! soft contrast: *background: #32302f
+*foreground: #ebdbb2
+! Black + DarkGrey
+*color0:  #282828
+*color8:  #928374
+! DarkRed + Red
+*color1:  #cc241d
+*color9:  #fb4934
+! DarkGreen + Green
+*color2:  #98971a
+*color10: #b8bb26
+! DarkYellow + Yellow
+*color3:  #d79921
+*color11: #fabd2f
+! DarkBlue + Blue
+*color4:  #458588
+*color12: #83a598
+! DarkMagenta + Magenta
+*color5:  #b16286
+*color13: #d3869b
+! DarkCyan + Cyan
+*color6:  #689d6a
+*color14: #8ec07c
+! LightGrey + White
+*color7:  #a89984
+*color15: #ebdbb2
 
 URxvt.color24:  #076678
 URxvt.color66:  #427b58
