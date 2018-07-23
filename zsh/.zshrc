@@ -23,3 +23,13 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 XDG_CONFIG_HOME="$HOME/.config"
+
+HISTFILE=~/.zsh_history
+
+bindkey '^[[A' up-line-or-search
+bindkey '^[[B' down-line-or-search
+
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+[[ -r /usr/share/z/z.sh ]] && source /usr/share/z/z.sh
+source /usr/share/nvm/init-nvm.sh

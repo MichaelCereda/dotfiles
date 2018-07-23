@@ -2,15 +2,16 @@ antigen use oh-my-zsh
 
 antigen bundle git
 antigen bundle pip
+antigen bundle pass
+antigen bundle history-substring-search
 antigen bundle node
 antigen bundle nvm
 antigen bundle npm
 
 antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-history-substring-search ./zsh-history-substring-search.zsh
 antigen bundle zsh-users/zsh-completions
-antigen bundle robbyrussell/oh-my-zsh plugins/pass
-
+# antigen bundle robbyrussell/oh-my-zsh plugins/pass
+antigen bundle ninrod/pass-zsh-completion
 antigen theme theunraveler
 antigen apply
 
