@@ -33,6 +33,11 @@ Plugin 'junegunn/fzf'
 Plugin 'https://github.com/tyrannicaltoucan/vim-quantum.git'
 Plugin 'lilydjwg/colorizer'
 Plugin 'morhetz/gruvbox'
+Plugin 'junegunn/goyo.vim'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'ekalinin/dockerfile.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -59,7 +64,7 @@ set list
 let &showbreak="\u21aa\u2022"
 let &listchars="tab:\u2192\ ,eol:\u21b2,nbsp:\u2423,trail:\u2022,extends:\u232a,precedes:\u2329"
 
-set showbreak=↪\ 
+set showbreak=↪ 
 set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
