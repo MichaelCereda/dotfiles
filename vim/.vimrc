@@ -37,6 +37,7 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'ekalinin/dockerfile.vim'
+Plugin 'leafgarland/typescript-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
